@@ -1,0 +1,34 @@
+# An example controller showing a sample home page
+
+GET        /                         controllers.Home.index
+
+############################ USERS ##############################
+GET        /register                 controllers.Users.register
+GET        /login                    controllers.Users.login
+
+############################ PRODUCTS ##############################
+# Show All
+GET        /products                 controllers.Products.list
+
+# Show One
+GET        /products/show/:ean       controllers.Products.show(ean: Long)
+
+# Add product
+GET        /products/create          controllers.Products.create
+
++nocsrf
+POST       /products/save            controllers.Products.save
+
+# Edit existing product
+GET        /products/:ean/edit       controllers.Products.edit(ean: Long)
++nocsrf
+PUT       /products/:ean/update      controllers.Products.update(ean: Long)
+
+# Delete product
++nocsrf
+DELETE     /products/delete/:ean     controllers.Products.delete(ean: Long)
+
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file             controllers.Assets.versioned(path="/public", file: Asset)

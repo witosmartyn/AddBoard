@@ -1,0 +1,25 @@
+@(product: Product)
+    @import helper._
+
+
+    @template("product form") {
+
+        <fieldset>
+            <p>@product.ean</p>
+            <p>@product.name</p>
+            <p>@product.description</p>
+
+        </fieldset>
+        <a  href="@routes.Products.list()" class="btn btn-info">
+            < BACK
+        </a>
+
+        <a href="@routes.Products.edit(product.ean)" class="btn btn-warning" >
+            Edit
+        </a>
+
+        <button class="btn btn-danger" onclick="sendDeleteRequest('@routes.Products.delete(product.ean)','@routes.Products.list()')">
+        Delete
+    </button>
+    }
+

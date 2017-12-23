@@ -1,0 +1,27 @@
+@()
+<div class=" kv-main ">
+
+    <div class="form-group">
+        <div class="file-loading">
+            <input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="2">
+        </div>
+    </div>
+
+</div>
+<script>
+        $("#file-1").fileinput({
+            theme: 'fa',
+            language: 'ru',
+            uploadUrl: 'localhost:9000',
+            allowedFileExtensions: ['jpg', 'png', 'gif'],
+            overwriteInitial: true,
+            maxFileSize: 2000,
+            maxFilesNum: 3,
+            showPreview: true,
+            showClose:false,
+            // allowedFileTypes: ['image', 'video', 'flash'],
+            slugCallback: function (filename) {
+                return filename.replace('(', '_').replace(']', '_');
+            }
+        });
+</script>

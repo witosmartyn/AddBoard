@@ -1,0 +1,18 @@
+@(id:Long,productForm: Form[Product])
+@import helper._
+
+
+@template("Edit product") {
+
+    @form(action = routes.Products.update(id),'id->"bookUpdateForm") {
+        <fieldset>
+            <legend> Product (@productForm("name").getValue)</legend>
+            @inputText(productForm("name"))
+            @textarea(productForm("description"))
+        </fieldset>
+        <button type="button" onclick="sendUpdateRequest('bookUpdateForm','@routes.Products.list()')">ajax_Update</button>
+    }
+
+}
+
+

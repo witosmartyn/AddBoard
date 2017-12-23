@@ -1,0 +1,59 @@
+@()
+
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+                <span class="sr-only">open navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div><a class="navbar-brand" href="@routes.Home.index()">
+                <span class="logo-begin">Ad</span><span class="logo-end">Board</span>
+            </a></div>
+        </div>
+        <div class="collapse navbar-collapse" id="responsive-menu" >
+            <ul class="navbar-right">
+                <a href="@routes.Products.create()" class="btn btn-warning navbar-right"><i class="glyphicon glyphicon-plus-sign"></i>
+                    Подать обьявление</a>
+            </ul>
+            <ul class="navbar-right">
+                <a href="@routes.Users.login()" class="btn btn-success navbar-right"><i class="glyphicon glyphicon-plus-sign"></i>
+                    Войти</a>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" data-hover="dropdown"
+            data-animations="pulse pulse pulse pulse ">
+
+                <li class="dropdown">
+
+                    <a href="#" class="btn dropdown-toggle" type="button"
+                    data-toggle="dropdown" data-hover="#drp1">
+                        Username <span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><p class="text-muted text-center"><i class="glyphicon  glyphicon-user"></i>
+                            Profile</p> </li>
+                        <li><a href="@routes.Products.list()">Обьявления</a></li>
+                        <li><a href="@routes.Users.register()">Регистрация</a></li>
+                        <li><a href="#">Сообщения</a></li>
+                        <li><a href="#">Платежи и счет</a></li>
+                        <li><a href="#">Настройки</a></li>
+
+                        <li><p class="text-muted text-center"><i class="glyphicon glyphicon-star"></i>
+                            favorites</p></li>
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Ads</a></li>
+                        <li ><a href="#"> <p class="text-center"><i class="glyphicon glyphicon-log-out"></i>
+                            LogOut</p></a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,28 @@
+@import views.html.partials._upload
+@(productForm: Form[Product])
+    @import helper._
+
+    @template(" Create product ") {
+        <!-- Submit Ad -->
+        @form(action = routes.Products.save()) {
+
+                <div class="form-group">
+                    @inputText(productForm("name"),'class->"form-control",'_id->"",'_label->"Наименование")
+                </div>
+
+                <div class="form-group">
+                    @textarea(productForm("description"),
+                        'class->"form-control",
+                        '_id->"comment",'_rows->"5"
+                    )
+                </div>
+
+
+        @_upload()
+
+
+            <input type="submit" class="btn btn-success btn-block" value="Save Ad" >
+        }
+
+    }
+

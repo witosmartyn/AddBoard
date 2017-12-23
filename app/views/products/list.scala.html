@@ -1,0 +1,36 @@
+@(products: List[Product])
+@import helper._
+
+@template("Product catalogue ") {
+    <div class="hide">
+    <dl>
+    @for(product <- products) {
+        <dt>
+            <a href="@routes.Products.show(product.ean)">
+                @product.ean - @product.name
+            </a>
+        </dt>
+        <dd>@product.description
+
+        <a href="@routes.Products.edit(product.ean)" class="btn btn-warning btn-xs">
+                Edit
+        </a>
+        <button type="button" class="btn btn-danger" onclick="sendDeleteRequest(
+                '@routes.Products.delete(product.ean)',
+                '@routes.Products.list()')">Delete
+        </button>
+        </dd>
+    }
+
+    </dl>
+    </div>
+    <div class="row">
+        <div class="thumbnail col-xs-6 img-responsive"><img src="@routes.Assets.versioned("images/bannerT.jpg")" alt="item"></div>
+        <div class="well-sm col-xs-6">
+            <h3>advertisement board</h3>
+            <p>Designed by play and bootstrap 3 </p>
+        </div>
+
+    </div>
+
+}

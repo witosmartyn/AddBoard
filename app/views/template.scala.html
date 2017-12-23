@@ -1,0 +1,89 @@
+@import views.html.partials._navigation
+@import views.html.partials._alerts
+@import views.html.partials._footer
+
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>@title</title>
+            <!-- Css-->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/font-awesome.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/bootstrap-dropdownhover.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/animate.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/fileinput-rtl.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/fileinput.css")">
+
+
+            <!-- custom  separated-->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/custom.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/register.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/tabs.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("css/search.css")">
+            <!-- Google-fonts-->
+        <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Passion+One">
+        <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Oxygen">
+            <!-- images-->
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+
+
+        <script src="@routes.Assets.versioned("js/jquery-3.2.1.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/bootstrap.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/fileinput.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/locales/ru.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/popper.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/theme.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.versioned("js/bootstrap-dropdownhover.js")" type="text/javascript"></script>
+
+        <script src="@routes.Assets.versioned("js/custom.js")" type="text/javascript"></script>
+
+
+    </head>
+    <body>
+
+        @_navigation()
+
+        <div id="top-banner" class="banner text-center">
+            <div class="container">
+                <h1>Sell or Advertise anything online  with <span class="logo-begin">
+                    Ad</span>
+                    <span class="logo-end">Board</span></h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+        </div>
+
+        @_alerts()
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1  hidden-xs hidden-sm banner-wrapper-vertiacl" style="background-color: yellow;">
+                        <div id="left-banner" class="banner"></div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-10">
+                    <div id="content" class="container-fluid ">
+                    @content
+                    </div>
+                </div>
+                <div class="col-sm-1 hidden-xs hidden-sm banner-wrapper-vertiacl" style="background-color: yellow;">
+
+                    <div id="right-banner" class="banner"></div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bottom-banner" class="banner col-xs-12 hidden-xs" ></div>
+
+        @_footer()
+
+
+    </body>
+
+</html>

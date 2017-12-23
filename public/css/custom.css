@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@import "nav.css";
+@import "banners.css";
+
+/*gradient bacground*/
+/*body, html{
+    height: 100%;
+    font-family: 'Oxygen', sans-serif;
+    background-size: cover;
+    background-attachment: fixed;
+
+    background: url("../images/bannerT.jpg"),no-repeat center center fixed;
+}*/
+body, html{
+height: 100%;
+    font-family: 'Oxygen', sans-serif;
+    /*background-image: linear-gradient(to bottom, #c795ff 0%,#23e67e 20%, #a9e61d 30%,#e6c74c 40%,#e1aa95 50%,#e184c1 60%,#80aae1 70%,#52e1de 80%,#c795ff 100%);*/
+     /*background: url('../images/bannerT.jpg') no-repeat center center fixed;*/
+     background: linear-gradient(to bottom, #61dc9d 0%, #2ba9c3 50%, #61dc9d 100%) no-repeat center center fixed ;
+     -moz-background-size: cover;
+     -webkit-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+
+hr{
+    border-color: #009edf;
+}
+
+.logo-begin{
+    color: #07b720;
+}
+
+.logo-end  {
+    color: #f3c500;
+}
+
+#content{
+    padding: 15px;
+    height:900px;
+    min-height: 380px;
+}
+
+

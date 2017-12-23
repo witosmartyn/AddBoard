@@ -1,0 +1,13 @@
+@import views.html.template
+@(reason: String)
+
+@template("404 - Page Not Found") {
+
+    <div class="jumbotron">
+        <h3>error 404</h3>
+        <p class="alert alert-warning">Page Not Found</p>
+        <p class="alert alert-danger">@reason</p>
+    </div>
+}
+
+
